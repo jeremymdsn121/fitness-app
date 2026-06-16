@@ -1,5 +1,6 @@
-/* Camp service worker — cache-first offline shell. */
-const CACHE = "camp-v1";
+/* Camp service worker — network-first so updates show when online,
+   cache fallback so the app still works fully offline. */
+const CACHE = "camp-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -28,19 +29,21 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
+  if (new URL(req.url).origin !== self.location.origin) return;
+
   e.respondWith(
-    caches.match(req).then((hit) => {
-      if (hit) return hit;
-      return fetch(req)
-        .then((res) => {
-          // Cache same-origin successful responses for next time.
-          if (res && res.status === 200 && new URL(req.url).origin === self.location.origin) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
-          }
-          return res;
-        })
-        .catch(() => caches.match("./index.html"));
-    })
+    fetch(req)
+      .then((res) => {
+        // Refresh the cache with the latest copy.
+        if (res && res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy));
+        }
+        return res;
+      })
+      .catch(() =>
+        // Offline: serve the cached copy, or the shell for navigations.
+        caches.match(req).then((hit) => hit || caches.match("./index.html"))
+      )
   );
 });

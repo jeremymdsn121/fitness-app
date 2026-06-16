@@ -217,18 +217,18 @@ const MEALS = {
   breakfast: { title: "Breakfast", fixed: true, kcal: 820, p: 60, f: 26, c: 86,
     items: ["4 whole eggs", "80g dry oats cooked + 1 scoop whey stirred in", "1 banana"] },
   snack: { title: "Snack", fixed: true, kcal: 195, p: 23, f: 0, c: 26,
-    items: ["250g 0% Greek yogurt + 1 cup berries"] },
+    items: ["250g 0% Greek yogurt + 140g berries"] },
   lunch: {
     A: { title: "Beef Burrito Bowl", kcal: 675, p: 55, f: 18, c: 73,
-      items: ["6 oz 90/10 ground beef, taco-seasoned", "1 cup cooked rice + ½ cup black beans", "Salsa, peppers, onions"] },
+      items: ["170g 90/10 ground beef, taco-seasoned", "160g cooked rice + 120g black beans", "Salsa, peppers, onions"] },
     B: { title: "Chicken & Sweet Potato", kcal: 650, p: 58, f: 20, c: 60,
-      items: ["8 oz chicken breast", "1 large roasted sweet potato (~300g)", "2 cups greens + 1 tbsp olive oil"] },
+      items: ["225g chicken breast", "300g roasted sweet potato", "60g greens + 1 tbsp olive oil"] },
   },
   dinner: {
     A: { title: "White Fish & Potato Bowl", kcal: 640, p: 55, f: 18, c: 64,
-      items: ["8 oz cod or tilapia (or canned tuna)", "300g potato roasted + 1 tbsp olive oil", "Roasted vegetables"] },
+      items: ["225g cod or tilapia (or canned tuna)", "300g roasted potato + 1 tbsp olive oil", "Roasted vegetables"] },
     B: { title: "Turkey Chili", kcal: 610, p: 60, f: 9, c: 72,
-      items: ["7 oz 93/7 ground turkey", "¾ cup beans + diced tomatoes + chili veg", "½ cup rice"] },
+      items: ["200g 93/7 ground turkey", "180g beans + diced tomatoes + chili veg", "80g cooked rice"] },
   },
 };
 
