@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>Camp — Train & Eat</title>
+  <meta name="theme-color" content="#1F3A5F" />
+
+  <!-- PWA / iOS home-screen -->
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Camp" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- First-launch onboarding tip -->
+  <div id="onboarding" class="onboarding hidden" role="dialog" aria-modal="true">
+    <div class="onboarding-card">
+      <h2>Set it up once</h2>
+      <p><strong>1.</strong> Tap the Share button, then <em>Add to Home Screen</em>. Camp will run full-screen and work offline.</p>
+      <p><strong>2.</strong> Set <strong>one</strong> daily iPhone reminder pointing here — that's your workout nudge. No app notifications needed.</p>
+      <p class="muted">Everything stays on this device. No account, no cloud.</p>
+      <button class="btn-primary" id="onboarding-dismiss">Got it</button>
+    </div>
+  </div>
+
+  <main id="screen" class="screen"></main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tab" data-tab="today" aria-label="Today">
+      <span class="tab-ico">●</span><span class="tab-label">Today</span>
+    </button>
+    <button class="tab" data-tab="train" aria-label="Train">
+      <span class="tab-ico">▲</span><span class="tab-label">Train</span>
+    </button>
+    <button class="tab" data-tab="eat" aria-label="Eat">
+      <span class="tab-ico">◆</span><span class="tab-label">Eat</span>
+    </button>
+    <button class="tab" data-tab="shop" aria-label="Shop">
+      <span class="tab-ico">▢</span><span class="tab-label">Shop</span>
+    </button>
+    <button class="tab" data-tab="progress" aria-label="Progress">
+      <span class="tab-ico">◢</span><span class="tab-label">Progress</span>
+    </button>
+  </nav>
+
+  <script src="./app.js"></script>
+</body>
+</html>
