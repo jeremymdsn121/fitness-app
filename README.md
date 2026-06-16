@@ -29,13 +29,26 @@ python -m http.server 8080
 Service workers need `https://` or `localhost`, so opening `index.html` as a
 `file://` won't enable offline mode — use a server.
 
-## Put it on your iPhone
+## Live URL
 
-1. Deploy this folder to any static host — **Netlify** (drag-and-drop the folder
-   at app.netlify.com/drop) or GitHub Pages both work and give you HTTPS.
-2. On the iPhone, open the URL in Safari → **Share → Add to Home Screen**.
-3. Set **one** daily iOS reminder (Clock or Reminders app) pointing at the app —
-   that's your workout nudge. No push notifications are built in by design.
+Deployed on GitHub Pages: **https://jeremymdsn121.github.io/fitness-app/**
+
+To update it after editing files: commit and push to `master` — Pages rebuilds
+automatically in a minute or two.
+
+```bash
+git add -A && git commit -m "..." && git push
+```
+
+## Add it to your phone
+
+**iPhone (Safari):** open the URL → **Share → Add to Home Screen**.
+
+**Android (Chrome):** open the URL → tap **⋮ → Install app** (or *Add to Home
+screen*). Android uses the maskable icon and full manifest.
+
+Then set **one** daily phone reminder pointing at the app — that's your workout
+nudge. No push notifications are built in by design.
 
 ## Files
 
